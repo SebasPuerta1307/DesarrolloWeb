@@ -1,2 +1,5 @@
-# DesarrolloWeb
-Trabajos de la materia Desarrollo Web Grupo 050 ET0179
+# Grupo A DesarrolloWeb
+- Sebastian Puerta
+- Luis Miguel Sosa
+- Paulina Cardona
+
