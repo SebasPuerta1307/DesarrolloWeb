@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('jurados', function (Blueprint $table) {
             $table->id('id_jurado');
-            $table->string('nombre', 100);
-            $table->string('correo', 100);
-            $table->timestamps();
+        $table->string('nombre', 100);
+        $table->string('correo', 100);
+        $table->timestamps();
         });
     }
 
