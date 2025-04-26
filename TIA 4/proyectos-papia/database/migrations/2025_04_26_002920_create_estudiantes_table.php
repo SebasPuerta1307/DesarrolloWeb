@@ -12,16 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('estudiantes', function (Blueprint $table) {
-            $table->id('id_estudiante');
-            $table->string('nombre', 100);
-            $table->string('apellido', 100);
-            $table->string('documento', 20);
-            $table->string('correo', 100);
-            $table->unsignedBigInteger('id_programa');
-            $table->boolean('matricula_activa');
+            $table->id('COD_estudiante');
+            $table->string('nombre_1');
+            $table->string('nombre_2')->nullable();
+            $table->string('apellido_1');
+            $table->string('apellido_2')->nullable();
+            $table->string('telefono_1');
+            $table->string('telefono_2')->nullable();
+            $table->string('correo_electronico');
+            $table->unsignedBigInteger('COD_programa');
+            $table->unsignedBigInteger('COD_proyecto');
             $table->timestamps();
-    
-            $table->foreign('id_programa')->references('id_programa')->on('programas');
         });
     }
 

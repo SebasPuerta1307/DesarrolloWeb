@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estados', function (Blueprint $table) {
-            $table->id('id_estado');
-        $table->string('nombre_estado', 100);
+        Schema::create('tipo_entregables', function (Blueprint $table) {
+            $table->id('COD_tipoentregable');
+        $table->string('nombre_tipo_entregable');
+        $table->string('descripcion_tipo_entregable');
         $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('tipo_entregables');
     }
 };

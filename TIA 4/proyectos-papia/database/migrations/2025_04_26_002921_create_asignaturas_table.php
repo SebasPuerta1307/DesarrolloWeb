@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id('id_rol');
-            $table->string('nombre_rol', 50);
+        Schema::create('asignaturas', function (Blueprint $table) {
+            $table->id('COD_asignatura');
+            $table->string('nombre_asignatura');
+            $table->string('departamento_asignatura');
+            $table->string('facultad_asignatura');
+            $table->integer('creditos_asignatura');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('asignaturas');
     }
 };

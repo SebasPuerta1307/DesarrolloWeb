@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jurados', function (Blueprint $table) {
-            $table->id('id_jurado');
-        $table->string('nombre', 100);
-        $table->string('correo', 100);
+        Schema::create('usuarios', function (Blueprint $table) {
+            $table->id('COD_usuario');
+        $table->string('Nombre_ingreso_usuario', 50);
+        $table->string('contraseña_usuario');
+        $table->string('correo_electronico')->nullable();
+        $table->unsignedBigInteger('COD_rol');
         $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jurados');
+        Schema::dropIfExists('usuarios');
     }
 };

@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('periodos', function (Blueprint $table) {
-            $table->id('id_periodo');
-        $table->string('nombre_periodo', 50);
+        Schema::create('iras', function (Blueprint $table) {
+            $table->id('COD_IRA');
+        $table->string('descripcion_IRA');
+        $table->string('nivel_dominio_IRA');
+        $table->unsignedBigInteger('COD_ERA');
         $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('periodos');
+        Schema::dropIfExists('iras');
     }
 };

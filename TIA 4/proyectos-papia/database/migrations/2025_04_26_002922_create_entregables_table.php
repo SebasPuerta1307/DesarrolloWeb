@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_proyecto', function (Blueprint $table) {
-            $table->id('id_tipo_proyecto');
-        $table->string('tipo', 50);
-        $table->timestamps();
+        Schema::create('entregables', function (Blueprint $table) {
+            $table->id('COD_entregable');
+            $table->string('nombre_entregable');
+            $table->string('descripcion_entregable');
+            $table->unsignedBigInteger('COD_proyecto');
+            $table->timestamps();
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_proyecto');
+        Schema::dropIfExists('entregables');
     }
 };

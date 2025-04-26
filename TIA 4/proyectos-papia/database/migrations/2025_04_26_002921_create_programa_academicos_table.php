@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bitacoras', function (Blueprint $table) {
-            $table->id('id_bitacora');
-        $table->text('accion');
-        $table->timestamp('fecha')->useCurrent();
-        $table->unsignedBigInteger('id_usuario');
+        Schema::create('programa_academicos', function (Blueprint $table) {
+            $table->id('COD_programa');
+        $table->string('nombre_programa_academico');
         $table->timestamps();
-
-        $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
         });
     }
 
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bitacoras');
+        Schema::dropIfExists('programa_academicos');
     }
 };
