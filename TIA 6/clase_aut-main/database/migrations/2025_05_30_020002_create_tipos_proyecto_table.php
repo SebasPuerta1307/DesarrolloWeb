@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tipos_proyecto', function (Blueprint $table) {
             $table->id();
         $table->string('codigo', 12)->unique();
-        $table->string('descripción', 255);
+        $table->string('descripcion', 255);
         $table->timestamps();
         });
     }

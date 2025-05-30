@@ -1,41 +1,117 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+        <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
+            {{ __('Menu Principal') }}
         </h2>
     </x-slot>
 
-    <!-- <div class="py-12">
+    <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+            <div class="dark:bg-red-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-black-900 dark:text-gray-100 text-center">
+                    Hola, {{ Auth::user()->name }} 👋
                 </div>
             </div>
         </div>
-    </div> -->
+    </div> 
 
     <!-- Agregado para un Menú -->
-    <div class="py-12">
+    <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                <h3 class="text-lg font-bold mb-4">Menú de opciones</h3>
+                <h3 class="text-lg font-bold mb-4 text-center">Menú de opciones</h3>
                 <ul class="list-disc ml-5 space-y-2">
                 
-                    <li>
-                        <a href="{{ route('tipo-proyectos.index') }}" class="text-blue-600 hover:underline">
+                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="{{ route('tipos_proyecto.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
                         Tipos de Proyecto
-                        </a>
-                    </li>
-                    
-                    <li><a class="text-blue-600 hover:underline">Instituciones</a></li>
-                    <li><a class="text-blue-600 hover:underline">Facultades</a></li>
-                    <li><a class="text-blue-600 hover:underline">Departamentos</a></li>
-                    <li><a class="text-blue-600 hover:underline">Programas</a></li>
-                    <li><a class="text-blue-600 hover:underline">Asignaturas</a></li>
-                    <li><a class="text-blue-600 hover:underline">Docentes</a></li>
-                    <li><a class="text-blue-600 hover:underline">Estudiantes</a></li>
-                    <li><a class="text-blue-600 hover:underline">Evaluadores</a></li>
+                    </a>
+                    <!-- INSTITUCIONES-->
+                    <a href="{{ route('institucion.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Instituciones
+                    </a>
+                    <!-- Facultades -->
+                    <a href="{{ route('facultad.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Facultades
+                    </a>
+                    <!-- Departamentos -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Departamentos
+                    </a>
+                    <!-- Programas -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Programas
+                    </a>
+                    <!-- Asignaturas -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Asignaturas
+                    </a>
+                    <!-- Docentes -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Docentes
+                    </a>
+                    <!-- Estudiantes -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Estudiantes
+                    </a>
+                    <!-- Evaluadores -->
+                    <a href="#"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Evaluadores
+                    </a>
                 </ul>
                 
             </div>

@@ -10,7 +10,7 @@
     </x-slot>
 
     <div class="py-12 px-6">
-        <form action="{{ route('tipo-proyectos.store') }}" method="POST" 
+        <form action="{{ route('tipos_proyecto.store') }}" method="POST" 
                 class="bg-white p-6 rounded shadow-md max-w-xl">
             @csrf
 
@@ -31,7 +31,7 @@
             </div>
 
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Guardar</button>
-            <a href="{{ route('tipo-proyectos.index') }}" class="ml-4 text-gray-700">Cancelar</a>
+            <a href="{{ route('tipos_proyecto.index') }}" class="ml-4 text-gray-700">Cancelar</a>
         </form>
     </div>
 </x-app-layout>

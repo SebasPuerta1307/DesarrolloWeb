@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\TipoProyectoController;
+use App\Http\Controllers\TiposProyectoController;
 use App\Http\Controllers\AsignaturaController;
+use App\Http\Controllers\InstitucionController;
+use App\Http\Controllers\FacultadesController;
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +27,10 @@ Route::middleware('auth')->group(function () {
  * Todas las opciones del Menú
  */
 Route::middleware(['auth'])->group(function () {
-    Route::resource('tipo-proyectos', TipoProyectoController::class);
+    Route::resource('tipos_proyecto', TiposProyectoController::class);
+    Route::resource('institucion', InstitucionController::class);
     Route::resource('asignaturas', AsignaturaController::class);
+    Route::resource('facultad', FacultadesController::class);
 });
 
 
