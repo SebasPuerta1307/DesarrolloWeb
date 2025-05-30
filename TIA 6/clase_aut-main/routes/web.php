@@ -6,6 +6,18 @@ use App\Http\Controllers\AsignaturaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::resource('docentes', App\Http\Controllers\DocenteController::class);
+Route::resource('estudiantes', App\Http\Controllers\EstudianteController::class);
+Route::resource('evaluadores', App\Http\Controllers\EvaluadorController::class);
+
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\EvaluadorController;
+
+Route::resource('docentes', DocenteController::class);
+Route::resource('estudiantes', EstudianteController::class);
+Route::resource('evaluadores', EvaluadorController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
