@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nuevo Estudiante</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nuevo Programa</h2>
         <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
-            {{ __('Estudiantes') }}
+            {{ __('Programas') }}
         </h2>
         <a href="{{ route('dashboard') }}"
             class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 mb-4">
@@ -11,12 +11,12 @@
     </x-slot>
 
     <div class="py-12 px-6 flex justify-center items-center">
-        <form action="{{ route('estudiantes.store') }}" method="POST" 
+        <form action="{{ route('programa.store') }}" method="POST"
               class="bg-white p-6 rounded shadow-md w-[600px]">
             @csrf
 
             <div class="mb-4">
-                <label class="block font-bold">Nombre</label>
+                <label class="block font-bold">Nombre del Programa</label>
                 <input type="text" name="nombre" class="w-full border p-2 rounded" required>
                 @error('nombre')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -24,28 +24,20 @@
             </div>
 
             <div class="mb-4">
-                <label class="block font-bold">Correo</label>
-                <input type="email" name="correo" class="w-full border p-2 rounded" required>
-                @error('correo')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label class="block font-bold">Programa</label>
-                <select name="programa_id" class="w-full border p-2 rounded" required>
-                    <option value="">Seleccione un programa</option>
-                    @foreach ($programas as $programa)
-                        <option value="{{ $programa->id }}">{{ $programa->nombre }}</option>
+                <label class="block font-bold">Departamento</label>
+                <select name="departamento_id" class="w-full border p-2 rounded" required>
+                    <option value="">Seleccione un departamento</option>
+                    @foreach ($departamentos as $departamento)
+                        <option value="{{ $departamento->id }}">{{ $departamento->nombre }}</option>
                     @endforeach
                 </select>
-                @error('programa_id')
+                @error('departamento_id')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
 
             <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Guardar</button>
-            <a href="{{ route('estudiantes.index') }}" class="ml-4 text-gray-700">Cancelar</a>
+            <a href="{{ route('programa.index') }}" class="ml-4 text-gray-700">Cancelar</a>
         </form>
     </div>
 </x-app-layout>

@@ -1,7 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Facultades</h2>
-        
+        <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
+            {{ __('Facultades') }}
+        </h2>
         <a href="{{ route('dashboard') }}"
             class="inline-block bg-white text-black px-4 py-2 rounded hover:bg-gray-300 mb-4">
             ← Volver al Menú Principal
@@ -24,14 +26,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($facultad as $facultade)
+                @foreach ($facultad as $facult)
                     <tr>
-                        <td class="border px-4 py-2">{{ $facultade->id }}</td>
-                        <td class="border px-4 py-2">{{ $facultade->nombre }}</td>
-                        <td class="border px-4 py-2">{{ $facultade->institucion_id }}</td>
+                        <td class="border px-4 py-2">{{ $facult->id }}</td>
+                        <td class="border px-4 py-2">{{ $facult->nombre }}</td>
+                        <td class="border px-4 py-2">{{ $facult->institucion_id }}</td>
                         <td class="border px-4 py-2 space-x-2">
-                            <a href="{{ route('facultad.edit', $facultade) }}" class="text-blue-600">Editar</a>
-                            <form action="{{ route('facultad.destroy', $facultade) }}" method="POST" class="inline">
+                            <a href="{{ route('facultad.edit', $facult) }}" class="text-blue-600">Editar</a>
+                            <form action="{{ route('facultad.destroy', $facult) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-600" onclick="return confirm('¿Eliminar esta facultad?')">Eliminar</button>

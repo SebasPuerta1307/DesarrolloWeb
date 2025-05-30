@@ -12,11 +12,11 @@ class EvaluadorController extends Controller
      */
     public function index() {
         $evaluadores = Evaluador::all();
-        return view('evaluadores.index', compact('evaluadores'));
+        return view('evaluador.index', compact('evaluadores'));
     }
 
     public function create() {
-        return view('evaluadores.create');
+        return view('evaluador.create');
     }
 
     public function store(Request $request) {
@@ -26,23 +26,11 @@ class EvaluadorController extends Controller
         ]);
 
         Evaluador::create($request->all());
-        return redirect()->route('evaluadores.index');
+        return redirect()->route('evaluador.index');
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Evaluador $evaluador) {
-        return view('evaluadores.edit', compact('evaluador'));
+        return view('evaluador.edit', compact('evaluador'));
     }
 
     public function update(Request $request, Evaluador $evaluador) {
@@ -52,11 +40,11 @@ class EvaluadorController extends Controller
         ]);
 
         $evaluador->update($request->all());
-        return redirect()->route('evaluadores.index');
+        return redirect()->route('evaluador.index');
     }
 
     public function destroy(Evaluador $evaluador) {
         $evaluador->delete();
-        return redirect()->route('evaluadores.index');
+        return redirect()->route('evaluador.index');
     }
 }

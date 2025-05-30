@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Estudiantes</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Evaluador</h2>
         <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
-            {{ __('Estudiantes') }}
+            {{ __('Evaluador') }}
         </h2>
         <a href="{{ route('dashboard') }}"
             class="inline-block bg-white text-black px-4 py-2 rounded hover:bg-gray-300 mb-4">
@@ -11,7 +11,7 @@
     </x-slot>
 
     <div class="py-12 px-6">
-        <a href="{{ route('estudiantes.create') }}" class="bg-red-500 text-white px-4 py-2 rounded mb-4 inline-block">Nuevo Estudiante</a>
+        <a href="{{ route('evaluador.create') }}" class="bg-red-500 text-white px-4 py-2 rounded mb-4 inline-block">Nuevo Evaluador</a>
 
         @if (session('success'))
             <div class="bg-green-100 text-green-700 px-4 py-2 mb-4 rounded">{{ session('success') }}</div>
@@ -22,28 +22,26 @@
                 <tr>
                     <th class="px-4 py-2 border">Nombre</th>
                     <th class="px-4 py-2 border">Correo</th>
-                    <th class="px-4 py-2 border">Id Programa</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($estudiantes as $estudiante)
+                @foreach ($evaluadores as $evaluador)
                     <tr>
-                        <td class="border px-4 py-2">{{ $estudiante->nombre }}</td>
-                        <td class="border px-4 py-2">{{ $estudiante->correo }}</td>
-                        <td class="border px-4 py-2">{{ $estudiante->programa->nombre ?? 'Sin programa' }}</td>
+                        <td class="border px-4 py-2">{{ $evaluador->nombre }}</td>
+                        <td class="border px-4 py-2">{{ $evaluador->correo }}</td>
                         <td class="border px-4 py-2 space-x-2">
-                            <a href="{{ route('estudiantes.edit', $estudiante) }}" class="text-blue-600">Editar</a>
-                            <form action="{{ route('estudiantes.destroy', $estudiante) }}" method="POST" class="inline">
+                            <a href="{{ route('evaluador.edit', $evaluador) }}" class="text-blue-600">Editar</a>
+                            <form action="{{ route('evaluador.destroy', $evaluador) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-red-600" onclick="return confirm('¿Eliminar este estudiante?')">Eliminar</button>
+                                <button type="submit" class="text-red-600" onclick="return confirm('¿Eliminar esta facultad?')">Eliminar</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
-                @if ($estudiantes->isEmpty())
+                @if ($evaluadores->isEmpty())
                     <tr>
-                        <td colspan="4" class="text-center py-4 text-gray-500">No hay Estudiantes registrados.</td>
+                        <td colspan="4" class="text-center py-4 text-gray-500">No hay Facultades registradas.</td>
                     </tr>
                 @endif
             </tbody>

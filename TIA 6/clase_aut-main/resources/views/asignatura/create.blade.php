@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nuevo Estudiante</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nueva Asignatura</h2>
         <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
-            {{ __('Estudiantes') }}
+            {{ __('Asignaturas') }}
         </h2>
         <a href="{{ route('dashboard') }}"
             class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 mb-4">
@@ -11,7 +11,7 @@
     </x-slot>
 
     <div class="py-12 px-6 flex justify-center items-center">
-        <form action="{{ route('estudiantes.store') }}" method="POST" 
+        <form action="{{ route('asignatura.store') }}" method="POST" 
               class="bg-white p-6 rounded shadow-md w-[600px]">
             @csrf
 
@@ -19,14 +19,6 @@
                 <label class="block font-bold">Nombre</label>
                 <input type="text" name="nombre" class="w-full border p-2 rounded" required>
                 @error('nombre')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label class="block font-bold">Correo</label>
-                <input type="email" name="correo" class="w-full border p-2 rounded" required>
-                @error('correo')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
@@ -45,7 +37,7 @@
             </div>
 
             <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Guardar</button>
-            <a href="{{ route('estudiantes.index') }}" class="ml-4 text-gray-700">Cancelar</a>
+            <a href="{{ route('asignatura.index') }}" class="ml-4 text-gray-700">Cancelar</a>
         </form>
     </div>
 </x-app-layout>

@@ -1,7 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nueva institución</h2>
-        
+        <h2 class="font-semibold text-xl text-center text-blue-800 dark:text-blue-400 leading-tight">
+            {{ __('institucion') }}
+        </h2>
         <a href="{{ route('dashboard') }}"
             class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 mb-4">
             ← Volver al Menú Principal

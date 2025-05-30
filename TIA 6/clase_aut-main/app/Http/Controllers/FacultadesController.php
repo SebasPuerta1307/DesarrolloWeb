@@ -11,13 +11,13 @@ class FacultadesController extends Controller
     public function index()
     {
         $facultad = Facultades::with('institucion')->get();
-        return view('facultades.index', compact('facultad'));
+        return view('facultad.index', compact('facultad'));
     }
 
     public function create()
     {
         $instituciones = Instituciones::all();
-        return view('facultades.create', compact('instituciones'));
+        return view('facultad.create', compact('instituciones'));
     }
 
     public function store(Request $request)
@@ -29,14 +29,14 @@ class FacultadesController extends Controller
 
         Facultades::create($request->all());
 
-        return redirect()->route('facultades.index')
+        return redirect()->route('facultad.index')
                          ->with('success', 'Facultad creada exitosamente.');
     }
 
     public function edit(Facultades $facultad)
     {
         $instituciones = Instituciones::all();
-        return view('facultades.edit', compact('facultad', 'instituciones'));
+        return view('facultad.edit', compact('facultad', 'instituciones'));
     }
 
     public function update(Request $request, Facultades $facultad)
@@ -48,7 +48,7 @@ class FacultadesController extends Controller
 
         $facultad->update($request->all());
 
-        return redirect()->route('facultades.index')
+        return redirect()->route('facultad.index')
                          ->with('success', 'Facultad actualizada exitosamente.');
     }
 
@@ -56,7 +56,7 @@ class FacultadesController extends Controller
     {
         $facultad->delete();
 
-        return redirect()->route('facultades.index')
+        return redirect()->route('facultad.index')
                          ->with('success', 'Facultad eliminada exitosamente.');
     }
 

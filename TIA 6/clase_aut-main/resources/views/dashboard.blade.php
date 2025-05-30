@@ -53,7 +53,7 @@
                         Facultades
                     </a>
                     <!-- Departamentos -->
-                    <a href="#"
+                    <a href="{{ route('departamento.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -63,7 +63,7 @@
                         Departamentos
                     </a>
                     <!-- Programas -->
-                    <a href="#"
+                    <a href="{{ route('programa.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -73,7 +73,7 @@
                         Programas
                     </a>
                     <!-- Asignaturas -->
-                    <a href="#"
+                    <a href="{{ route('asignatura.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -83,7 +83,7 @@
                         Asignaturas
                     </a>
                     <!-- Docentes -->
-                    <a href="#"
+                    <a href="{{ route('docente.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -93,7 +93,7 @@
                         Docentes
                     </a>
                     <!-- Estudiantes -->
-                    <a href="#"
+                    <a href="{{ route('estudiantes.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -103,7 +103,7 @@
                         Estudiantes
                     </a>
                     <!-- Evaluadores -->
-                    <a href="#"
+                    <a href="{{ route('evaluador.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asignatura;
+use App\Models\Programa; // Necesitamos este modelo para el select de programas
 use Illuminate\Http\Request;
 
 class AsignaturaController extends Controller
@@ -12,7 +13,8 @@ class AsignaturaController extends Controller
      */
     public function index()
     {
-        //
+        $asignaturas = Asignatura::with('programa')->latest()->paginate(10);
+        return view('asignatura.index', compact('asignaturas'));
     }
 
     /**
@@ -20,7 +22,8 @@ class AsignaturaController extends Controller
      */
     public function create()
     {
-        //
+        $programas = Programa::orderBy('nombre')->get();
+        return view('asignatura.create', compact('programas'));
     }
 
     /**
@@ -28,23 +31,27 @@ class AsignaturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'programa_id' => 'required|exists:programas,id',
+        ]);
+
+        Asignatura::create($request->all());
+
+        return redirect()->route('asignatura.index')
+                         ->with('success', 'Asignatura creada exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Asignatura $asignatura)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Asignatura $asignatura)
     {
-        //
+        $programas = Programa::orderBy('nombre')->get();
+        $asignatura->load('programa');
+        return view('asignatura.edit', compact('asignatura', 'programas'));
     }
 
     /**
@@ -52,7 +59,15 @@ class AsignaturaController extends Controller
      */
     public function update(Request $request, Asignatura $asignatura)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'programa_id' => 'required|exists:programas,id',
+        ]);
+
+        $asignatura->update($request->all());
+
+        return redirect()->route('asignatura.index')
+                         ->with('success', 'Asignatura actualizada exitosamente.');
     }
 
     /**
@@ -60,6 +75,9 @@ class AsignaturaController extends Controller
      */
     public function destroy(Asignatura $asignatura)
     {
-        //
+        $asignatura->delete();
+
+        return redirect()->route('asignatura.index')
+                         ->with('success', 'Asignatura eliminada exitosamente.');
     }
 }
