@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
         $table->string('titulo');
         $table->text('descripcion')->nullable();
-        $table->foreignId('tipo_proyecto_id')->constrained('tipos_proyecto')->onDelete('cascade');
+        $table->unsignedBigInteger('tipo_proyecto_id');
+        $table->foreign('tipo_proyecto_id')->references('id')->on('tipos_proyecto');
         $table->timestamps();
         });
     }

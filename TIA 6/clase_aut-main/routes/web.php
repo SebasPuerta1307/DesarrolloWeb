@@ -11,7 +11,11 @@ use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\ProgramasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProyectoController;
+use App\Http\Controllers\ProyectoAsignaturaController;
 
+Route::resource('proyecto-asignaturas', ProyectoAsignaturaController::class);
+Route::resource('proyectos', ProyectoController::class);
 Route::resource('docentes', App\Http\Controllers\DocenteController::class);
 Route::resource('estudiantes', App\Http\Controllers\EstudianteController::class);
 Route::resource('evaluadores', App\Http\Controllers\EvaluadorController::class);
