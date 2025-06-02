@@ -31,7 +31,7 @@
                 <label class="block font-bold">Tipo de Proyecto</label>
                 <select name="tipo_proyecto_id" class="w-full border p-2 rounded" required>
                     @foreach ($tipos as $tipo)
-                        <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                        <option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
                     @endforeach
                 </select>
             </div>

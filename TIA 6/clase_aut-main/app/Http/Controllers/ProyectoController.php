@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
-use App\Models\TipoProyecto;
+use App\Models\TiposProyecto;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -14,7 +14,7 @@ class ProyectoController extends Controller
     }
 
     public function create() {
-        $tipos = TipoProyecto::all();
+        $tipos = TiposProyecto::all();
         return view('proyectos.create', compact('tipos'));
     }
 
@@ -29,7 +29,7 @@ class ProyectoController extends Controller
     }
 
     public function edit(Proyecto $proyecto) {
-        $tipos = TipoProyecto::all();
+        $tipos = TiposProyecto::all();
         return view('proyectos.edit', compact('proyecto', 'tipos'));
     }
 

@@ -26,7 +26,12 @@
 
              <div class="mb-4">
                 <label class="block font-bold">Id Institución</label>
-                <input type="text" name="institucion_id" class="w-full border p-2 rounded" required>
+                <select name="institucion_id" class="w-full border p-2 rounded" required>
+                    <option value="">Seleccione una institucion</option>
+                    @foreach ($instituciones as $instituciones)
+                        <option value="{{ $instituciones->id }}">{{ $instituciones->nombre }}</option>
+                    @endforeach
+                </select>
                 @error('institucion_id')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror

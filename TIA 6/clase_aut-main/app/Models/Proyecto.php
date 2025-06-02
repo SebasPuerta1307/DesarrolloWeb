@@ -9,6 +9,6 @@ class Proyecto extends Model
     protected $fillable = ['titulo', 'descripcion', 'tipo_proyecto_id'];
 
     public function tipo() {
-        return $this->belongsTo(TipoProyecto::class, 'tipo_proyecto_id');
+        return $this->belongsTo(TiposProyecto::class, 'tipo_proyecto_id');
     }
 }

@@ -25,7 +25,7 @@
                 <select name="tipo_proyecto_id" class="w-full border p-2 rounded" required>
                     @foreach ($tipos as $tipo)
                         <option value="{{ $tipo->id }}" {{ $proyecto->tipo_proyecto_id == $tipo->id ? 'selected' : '' }}>
-                            {{ $tipo->nombre }}
+                            {{ $tipo->descripcion }}
                         </option>
                     @endforeach
                 </select>

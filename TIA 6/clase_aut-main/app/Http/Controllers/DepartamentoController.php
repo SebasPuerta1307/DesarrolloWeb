@@ -47,7 +47,7 @@ class DepartamentoController extends Controller
     
     public function edit(Departamento $departamento)
     {
-        $facultades = Facultad::orderBy('nombre')->get();
+        $facultades = Facultades::orderBy('nombre')->get();
         // Carga la relación facultad para el formulario de edición
         $departamento->load('facultad');
         return view('departamento.edit', compact('departamento', 'facultades'));

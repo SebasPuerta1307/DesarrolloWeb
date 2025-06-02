@@ -25,7 +25,7 @@
                 @foreach ($proyectos as $proyecto)
                     <tr>
                         <td class="border px-4 py-2">{{ $proyecto->titulo }}</td>
-                        <td class="border px-4 py-2">{{ $proyecto->tipo->nombre ?? 'N/A' }}</td>
+                        <td class="border px-4 py-2">{{ $proyecto->tipo->descripcion ?? 'N/A' }}</td>
                         <td class="border px-4 py-2 space-x-2">
                             <a href="{{ route('proyectos.edit', $proyecto) }}" class="text-blue-600">Editar</a>
                             <form action="{{ route('proyectos.destroy', $proyecto) }}" method="POST" class="inline">

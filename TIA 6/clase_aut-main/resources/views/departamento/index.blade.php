@@ -34,7 +34,6 @@
                         <td class="border px-4 py-2">{{ $departamento->nombre }}</td>
                         <td class="border px-4 py-2">{{ $departamento->facultad->nombre ?? 'N/A' }}</td>
                         <td class="border px-4 py-2 space-x-2">
-                            <a href="{{ route('departamento.show', $departamento->id) }}" class="text-blue-600">Mostrar</a>
                             <a href="{{ route('departamento.edit', $departamento->id) }}" class="text-indigo-600">Editar</a>
                             <form action="{{ route('departamento.destroy', $departamento->id) }}"
                                   method="POST" class="inline">

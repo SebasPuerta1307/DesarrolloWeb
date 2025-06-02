@@ -83,7 +83,7 @@
                         Asignaturas
                     </a>
                     <!-- Docentes -->
-                    <a href="{{ route('docente.index') }}"
+                    <a href="{{ route('docentes.index') }}"
                        class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
                               text-center text-lg font-medium
                               text-blue-600 dark:text-blue-300
@@ -112,6 +112,41 @@
                               bg-white dark:bg-gray-800">
                         Evaluadores
                     </a>
+
+                    <!-- Proyectos -->
+                    <a href="{{ route('proyectos.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Proyectos
+                    </a>
+
+                    <!-- Evaluaciones -->
+                    <a href="{{ route('evaluaciones.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Evaluaciones
+                    </a>
+
+                    <!-- Proyectos-Asignaturas -->
+                    <a href="{{ route('proyecto-asignaturas.index') }}"
+                       class="block p-4 rounded-lg border border-gray-300 dark:border-gray-600
+                              text-center text-lg font-medium
+                              text-blue-600 dark:text-blue-300
+                              hover:bg-blue-100 dark:hover:bg-blue-900
+                              transition duration-200 ease-in-out
+                              bg-white dark:bg-gray-800">
+                        Proyectos-Asignaturas
+                    </a>
+
+                    
                 </ul>
                 
             </div>
